@@ -1,0 +1,173 @@
+/* pages/index/index.wxss */
+page {
+  background: linear-gradient(180deg, #E0C3FC 0%, #F4EEFB 50%, #FFFFFF 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+}
+
+.container {
+  padding: 20rpx 30rpx;
+}
+
+/* 顶部文案 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  margin-top: 20rpx;
+}
+.sub-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+.tips {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+/* 日历大卡片 */
+.calendar-card {
+  background: #fff;
+  border-radius: 30rpx;
+  position: relative;
+  padding: 40rpx 30rpx;
+  box-shadow: 0 10rpx 30rpx rgba(161, 140, 209, 0.2);
+  margin-bottom: 50rpx;
+}
+
+/* 顶部的环扣装饰 */
+.hooks {
+  position: absolute;
+  top: -15rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.hook {
+  width: 20rpx;
+  height: 40rpx;
+  background: #ddd;
+  border-radius: 10rpx;
+  box-shadow: inset 2rpx 2rpx 5rpx rgba(0,0,0,0.1);
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 左侧日期区 */
+.left-section {
+  flex: 1;
+  padding-right: 20rpx;
+}
+.year {
+  font-size: 24rpx;
+  color: #888;
+}
+.date-row {
+  margin: 10rpx 0 30rpx 0;
+  display: flex;
+  align-items: baseline;
+}
+.day {
+  font-size: 80rpx;
+  font-weight: bold;
+  line-height: 1;
+}
+.slash {
+  font-size: 40rpx;
+  margin: 0 10rpx;
+  color: #ccc;
+}
+.month, .weekday {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-right: 10rpx;
+}
+
+.lucky-item {
+  margin-bottom: 20rpx;
+}
+.label {
+  font-size: 24rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 8rpx;
+  margin-right: 10rpx;
+  font-weight: bold;
+}
+.label.yi { background: #E8F5E9; color: #2E7D32; }
+.label.ji { background: #FFEBEE; color: #C62828; }
+.desc {
+  font-size: 28rpx;
+  color: #444;
+}
+
+/* 右侧游戏机样式 */
+.right-section {
+  width: 260rpx;
+}
+.game-console {
+  background: linear-gradient(135deg, #9F85F3, #B8A1F8);
+  border-radius: 20rpx;
+  padding: 10rpx;
+  box-shadow: 5rpx 5rpx 15rpx rgba(159, 133, 243, 0.4);
+  color: #fff;
+  text-align: center;
+}
+.console-header {
+  font-size: 22rpx;
+  background: #5E35B1;
+  border-radius: 10rpx;
+  padding: 4rpx 0;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+.screen {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15rpx;
+  padding: 20rpx 10rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+}
+.screen-text { font-size: 20rpx; opacity: 0.8; }
+.score { font-size: 60rpx; font-weight: bold; margin: 10rpx 0; }
+.comment { font-size: 24rpx; margin-bottom: 10rpx; }
+.attributes {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18rpx;
+  opacity: 0.9;
+}
+
+/* 底部导航格 */
+.section-title {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 30rpx;
+}
+
+.grid-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-card {
+  width: 48%;
+  background: #fff;
+  border-radius: 25rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 5rpx 20rpx rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-title { font-size: 32rpx; font-weight: bold; margin-bottom: 10rpx; }
+.nav-sub { font-size: 22rpx; color: #999; margin-bottom: 20rpx; }
+.nav-icon { width: 100rpx; height: 100rpx; }

@@ -1,0 +1,103 @@
+/* pages/decision/decision.wxss */
+page {
+  background: linear-gradient(180deg, #E0C3FC 0%, #FFFFFF 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  margin-top: 100rpx;
+  text-align: center;
+  color: #8E24AA;
+}
+.title { font-size: 60rpx; font-weight: bold; }
+.subtitle { font-size: 28rpx; opacity: 0.6; margin-top: 10rpx;}
+
+/* 卡片容器布局 */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40rpx;
+  margin-top: 100rpx;
+}
+
+.card-wrapper {
+  width: 300rpx;
+  height: 500rpx;
+  perspective: 1000px; /* 3D 透视效果 */
+}
+
+/* 核心卡片样式 */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 贝塞尔曲线让动画有回弹感 */
+  transform-style: preserve-3d; /* 保持3D空间 */
+}
+
+/* 翻转状态 */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* 正面和背面的公共样式 */
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  backface-visibility: hidden; /* 背面不可见 */
+  box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- 正面样式 (还原截图的粉紫渐变) --- */
+.face.front {
+  background: linear-gradient(145deg, #F3E5F5, #FFF9C4); /* 浅紫到浅黄 */
+  border: 4rpx solid #fff;
+}
+
+.card-inner {
+  width: 90%;
+  height: 94%;
+  border: 2rpx solid rgba(156, 39, 176, 0.2);
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.center-text {
+  font-size: 40rpx;
+  color: #AB47BC;
+  font-weight: bold;
+}
+
+/* --- 背面样式 --- */
+.face.back {
+  background: white;
+  transform: rotateY(180deg); /* 默认先旋转过去 */
+}
+
+.result-text {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.result-text.yes { color: #4CAF50; } /* 绿色Yes */
+.result-text.no { color: #F44336; } /* 红色No */
+
+/* 重置按钮 */
+.reset-btn {
+  margin-top: 100rpx;
+  background: #AB47BC;
+  color: white;
+  border-radius: 50rpx;
+  padding: 0 60rpx;
+  box-shadow: 0 5rpx 15rpx rgba(171, 71, 188, 0.4);
+}

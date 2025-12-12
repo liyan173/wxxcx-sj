@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="header">
+    <view class="title">Yes or No</view>
+    <view class="subtitle">遇事不决，量子力学</view>
+  </view>
+
+  <view class="card-container">
+    <block wx:for="{{cards}}" wx:key="index">
+      <view class="card-wrapper" bindtap="flipCard" data-index="{{index}}">
+        <view class="card {{item.isFlipped ? 'flipped' : ''}}">
+          
+          <view class="face front">
+            <view class="card-inner">
+              <view class="corner-circle"></view>
+              <view class="center-text">选Ta</view>
+              <view class="corner-circle bottom-right"></view>
+            </view>
+          </view>
+
+          <view class="face back">
+            <view class="result-text {{item.result === 'No' ? 'no' : 'yes'}}">
+              {{item.result}}
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <button class="reset-btn" bindtap="reset" wx:if="{{showReset}}">再选一次</button>
+</view>

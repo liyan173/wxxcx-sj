@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="header">
+    <view class="sub-title">外挂加载完毕</view>
+    <view class="tips">先求大同，再求大不同</view>
+  </view>
+
+  <view class="calendar-card">
+    <view class="hooks">
+      <view class="hook"></view>
+      <view class="hook"></view>
+      <view class="hook"></view>
+    </view>
+
+    <view class="card-content">
+      <view class="left-section">
+        <view class="year">{{year}}年</view>
+        <view class="date-row">
+          <text class="day">{{day}}</text>
+          <text class="slash">/</text>
+          <text class="month">{{month}}</text>
+          <text class="weekday">{{weekday}}</text>
+        </view>
+        
+        <view class="lucky-section">
+          <view class="lucky-item">
+            <text class="label yi">宜</text>
+            <text class="desc">{{yiText}}</text>
+          </view>
+          <view class="lucky-item">
+            <text class="label ji">忌</text>
+            <text class="desc">{{jiText}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="right-section" bindtap="goToSimulator">
+        <view class="game-console">
+          <view class="console-header">今日重开模拟器</view>
+          <view class="screen">
+            <view class="screen-text">综合得分</view>
+            <view class="score">{{score}}</view>
+            <view class="comment">"{{comment}}"</view>
+            <view class="attributes">
+              <text>智慧:{{attrs.zhi}}</text>
+              <text>财富:{{attrs.cai}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-title">✨ 开挂上分必选 ✨</view>
+  
+  <view class="grid-nav">
+    <view class="nav-card" bindtap="goToFood">
+      <view class="nav-title">今天吃什么</view>
+      <view class="nav-sub">三分天注定</view>
+      <image class="nav-icon" src="https://img.icons8.com/color/96/hot-pot.png" mode="aspectFit"></image> 
+      </view>
+
+    <view class="nav-card" bindtap="goToDecision">
+      <view class="nav-title">Yes or No</view>
+      <view class="nav-sub">七分靠打拼</view>
+      <image class="nav-icon" src="https://img.icons8.com/fluency/96/tarot-cards.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>
