@@ -215,3 +215,128 @@ page {
   z-index: 5;
   backdrop-filter: blur(2px); /* 可选：毛玻璃效果 */
 }
+
+/* --- 模拟器弹窗样式 --- */
+
+/* 1. 全屏遮罩 */
+.sim-modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 深色遮罩 */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px); /* 背景模糊 */
+}
+
+/* 2. 弹窗容器 */
+.sim-modal-container {
+  width: 620rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: popUp 0.3s ease-out forwards;
+}
+
+/* 弹窗动画 */
+@keyframes popUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 3. 顶部标题 Tab */
+.sim-header-tab {
+  background: linear-gradient(to bottom, #7B1FA2, #6A1B9A);
+  padding: 12rpx 50rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  color: #FFEB3B; /* 黄色文字 */
+  font-weight: bold;
+  font-size: 30rpx;
+  border: 4rpx solid #BA68C8;
+  border-bottom: none;
+  margin-bottom: -6rpx; /* 下沉连接机身 */
+  z-index: 2;
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.2);
+}
+
+/* 4. 游戏机机身 */
+.sim-body {
+  width: 100%;
+  background: linear-gradient(180deg, #D1C4E9 0%, #B39DDB 100%); /* 浅紫渐变 */
+  border-radius: 40rpx;
+  padding: 35rpx;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 20rpx 40rpx rgba(0,0,0,0.3);
+  border: 6rpx solid #9575CD; /* 深紫边框 */
+}
+
+/* 5. 内部屏幕 */
+.sim-screen-inner {
+  background: #9FA8DA; /* 屏幕底色 */
+  border-radius: 20rpx;
+  height: 550rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  box-shadow: inset 0 5rpx 15rpx rgba(0,0,0,0.2);
+  border: 4rpx solid #7986CB;
+}
+
+.story-scroll {
+  height: 100%;
+}
+.story-content {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 1.6;
+  text-align: justify;
+  text-shadow: 0 2rpx 2rpx rgba(0,0,0,0.1);
+}
+
+/* --- 装饰元素 --- */
+
+/* 螺丝钉 */
+.screw {
+  width: 18rpx;
+  height: 18rpx;
+  background: #512DA8;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 1rpx 1rpx 2rpx rgba(255,255,255,0.4);
+}
+.tl { top: 20rpx; left: 20rpx; }
+.tr { top: 20rpx; right: 20rpx; }
+.bl { bottom: 20rpx; left: 20rpx; }
+.br { bottom: 20rpx; right: 20rpx; }
+
+/* 侧边黄色按钮 */
+.side-btn {
+  position: absolute;
+  top: 120rpx;
+  width: 16rpx;
+  height: 80rpx;
+  background: #FFEB3B; /* 亮黄 */
+  border-radius: 8rpx;
+  box-shadow: 2rpx 2rpx 5rpx rgba(0,0,0,0.2);
+}
+.side-btn.left { left: -12rpx; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.side-btn.right { right: -12rpx; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+/* 6. 底部按钮 */
+.sim-footer {
+  margin-top: 50rpx;
+}
+.continue-btn {
+  background: linear-gradient(90deg, #7B1FA2, #8E24AA);
+  color: white;
+  font-size: 32rpx;
+  padding: 10rpx 100rpx;
+  border-radius: 50rpx;
+  border: 2rpx solid rgba(255,255,255,0.5);
+  box-shadow: 0 5rpx 15rpx rgba(123, 31, 162, 0.4);
+}

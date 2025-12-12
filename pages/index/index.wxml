@@ -1,3 +1,79 @@
+<!--<view class="container">-->
+<!--  <view class="header">-->
+<!--    <view class="sub-title">外挂加载完毕</view>-->
+<!--    <view class="tips">先求大同，再求大不同</view>-->
+<!--  </view>-->
+
+<!--  <view class="calendar-card">-->
+<!--    <view class="hooks">-->
+<!--      <view class="hook"></view>-->
+<!--      <view class="hook"></view>-->
+<!--      <view class="hook"></view>-->
+<!--    </view>-->
+
+<!--    <view class="card-content">-->
+<!--      <view class="left-section">-->
+<!--        <view class="year">{{year}}年</view>-->
+<!--        <view class="date-row">-->
+<!--          <text class="day">{{day}}</text>-->
+<!--          <text class="slash">/</text>-->
+<!--          <text class="month">{{month}}</text>-->
+<!--          <text class="weekday">{{weekday}}</text>-->
+<!--        </view>-->
+
+<!--        <view class="lucky-section">-->
+<!--          <view class="lucky-item">-->
+<!--            <text class="label yi">宜</text>-->
+<!--            <text class="desc">{{yiText}}</text>-->
+<!--          </view>-->
+<!--          <view class="lucky-item">-->
+<!--            <text class="label ji">忌</text>-->
+<!--            <text class="desc">{{jiText}}</text>-->
+<!--          </view>-->
+<!--        </view>-->
+<!--      </view>-->
+
+<!--      <view class="right-section" bindtap="handleDevClick">-->
+<!--        <view class="game-console">-->
+<!--          <view class="dev-badge">调试中</view>-->
+
+<!--          <view class="console-header">今日重开模拟器</view>-->
+<!--          <view class="screen">-->
+<!--            <view class="screen-text">综合得分</view>-->
+<!--            <view class="score">{{score}}</view>-->
+<!--            <view class="comment">"{{comment}}"</view>-->
+<!--            <view class="attributes">-->
+<!--              <text>智慧:{{attrs.zhi}}</text>-->
+<!--              <text>财富:{{attrs.cai}}</text>-->
+<!--            </view>-->
+<!--          </view>-->
+<!--        </view>-->
+<!--      </view>-->
+<!--    </view>-->
+<!--  </view>-->
+
+<!--  <view class="section-title">✨ 开挂上分必选 ✨</view>-->
+
+<!--  <view class="grid-nav">-->
+<!--    <view class="nav-card dev-mode" bindtap="handleDevClick">-->
+<!--      <view class="nav-title">今天吃什么</view>-->
+<!--      <view class="nav-sub">三分天注定</view>-->
+<!--      <image class="nav-icon" src="https://img.icons8.com/color/96/hot-pot.png" mode="aspectFit"></image>-->
+
+<!--      <view class="mask-text">-->
+<!--        <text>功能开发中...</text>-->
+<!--      </view>-->
+<!--    </view>-->
+
+<!--    <view class="nav-card" bindtap="goToDecision">-->
+<!--      <view class="nav-title">Yes or No</view>-->
+<!--      <view class="nav-sub">七分靠打拼</view>-->
+<!--      <image class="nav-icon" src="https://img.icons8.com/fluency/96/tarot-cards.png" mode="aspectFit"></image>-->
+<!--    </view>-->
+<!--  </view>-->
+<!--</view>-->
+
+
 <view class="container">
   <view class="header">
     <view class="sub-title">外挂加载完毕</view>
@@ -33,10 +109,8 @@
         </view>
       </view>
 
-      <view class="right-section" bindtap="handleDevClick">
+      <view class="right-section" bindtap="openSimulator">
         <view class="game-console">
-          <view class="dev-badge">调试中</view>
-
           <view class="console-header">今日重开模拟器</view>
           <view class="screen">
             <view class="screen-text">综合得分</view>
@@ -55,20 +129,49 @@
   <view class="section-title">✨ 开挂上分必选 ✨</view>
 
   <view class="grid-nav">
-    <view class="nav-card dev-mode" bindtap="handleDevClick">
+    <view class="nav-card" bindtap="goToFood">
       <view class="nav-title">今天吃什么</view>
       <view class="nav-sub">三分天注定</view>
       <image class="nav-icon" src="https://img.icons8.com/color/96/hot-pot.png" mode="aspectFit"></image>
-
-      <view class="mask-text">
-        <text>功能开发中...</text>
-      </view>
     </view>
 
     <view class="nav-card" bindtap="goToDecision">
       <view class="nav-title">Yes or No</view>
       <view class="nav-sub">七分靠打拼</view>
       <image class="nav-icon" src="https://img.icons8.com/fluency/96/tarot-cards.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>
+
+<view class="sim-modal-mask" wx:if="{{showSimulator}}" catchtouchmove="true">
+  <view class="sim-modal-container">
+
+    <view class="sim-header-tab">
+      <text>今日重开模拟器</text>
+    </view>
+
+    <view class="sim-body">
+      <view class="screw tl"></view>
+      <view class="screw tr"></view>
+      <view class="screw bl"></view>
+      <view class="screw br"></view>
+      <view class="side-btn left"></view>
+      <view class="side-btn right"></view>
+
+      <view class="sim-screen-inner">
+        <scroll-view scroll-y class="story-scroll">
+          <view class="story-content">
+            第一幕：崩溃与“叛逃”<br/><br/>
+            连续加班第31天，你在凌晨三点的写字楼里，收到了老板对方案第17次的修改意见：“感觉不对，再找找感觉。”
+            <br/><br/>
+            这一刻，你身体里最后一根弦崩断了。你没有回复，而是关掉电脑，买了一张一小时后出发的火车票，目的地是一个你从未听说的、地图上的边陲小镇...
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view class="sim-footer">
+      <button class="continue-btn" bindtap="closeSimulator">继续</button>
     </view>
   </view>
 </view>

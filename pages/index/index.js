@@ -13,7 +13,9 @@ Page({
     jiText: '加载中...',
     score: 0,
     comment: '计算中',
-    attrs: { zhi: 0, cai: 0 }
+    attrs: { zhi: 0, cai: 0 },
+    // 新增：控制弹窗显示的变量
+    showSimulator: false
   },
 
   onLoad: function () {
@@ -57,20 +59,25 @@ Page({
   },
 
   // --- 交互区域 ---
+// --- 新增交互逻辑 ---
+  // 打开弹窗
+  openSimulator() {
+    this.setData({
+      showSimulator: true
+    });
+  },
 
-  // 统一的开发中提示
-  handleDevClick() {
-    wx.showToast({
-      title: '程序员正在爆肝开发中... ☕️',
-      icon: 'none',
-      duration: 2000
+  // 关闭弹窗
+  closeSimulator() {
+    this.setData({
+      showSimulator: false
     });
   },
 
   // 跳转到 Yes or No 页面 (保留正常功能)
   goToDecision() {
     wx.navigateTo({
-      url: '/pages/decision/decision'
+      url: './decision/decision.wxml'
     });
   }
 });
