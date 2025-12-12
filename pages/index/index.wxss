@@ -118,6 +118,7 @@ page {
   box-shadow: 5rpx 5rpx 15rpx rgba(159, 133, 243, 0.4);
   color: #fff;
   text-align: center;
+  position: relative; /* 关键：为了定位 dev-badge */
 }
 .console-header {
   font-size: 22rpx;
@@ -167,7 +168,50 @@ page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* 关键：为了定位 mask-text */
+  overflow: hidden;
 }
 .nav-title { font-size: 32rpx; font-weight: bold; margin-bottom: 10rpx; }
 .nav-sub { font-size: 22rpx; color: #999; margin-bottom: 20rpx; }
 .nav-icon { width: 100rpx; height: 100rpx; }
+
+/* --- 以下为新增样式：开发模式相关 --- */
+
+/* 右上角标签 */
+.dev-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff9800; /* 橙色 */
+  color: white;
+  font-size: 18rpx;
+  padding: 4rpx 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-top-right-radius: 20rpx; /* 匹配容器圆角 */
+  z-index: 10;
+  box-shadow: -2rpx 2rpx 5rpx rgba(0,0,0,0.1);
+}
+
+/* 变灰模式 */
+.dev-mode {
+  opacity: 0.9;
+  background-color: #f8f8f8;
+}
+
+/* 遮罩文字 */
+.mask-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 半透明黑底 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28rpx;
+  z-index: 5;
+  backdrop-filter: blur(2px); /* 可选：毛玻璃效果 */
+}

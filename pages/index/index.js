@@ -56,22 +56,21 @@ Page({
     });
   },
 
-  // --- 页面跳转区域 ---
+  // --- 交互区域 ---
 
-  // 跳转到 Yes or No 页面 (保留这个正确的)
+  // 统一的开发中提示
+  handleDevClick() {
+    wx.showToast({
+      title: '程序员正在爆肝开发中... ☕️',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+
+  // 跳转到 Yes or No 页面 (保留正常功能)
   goToDecision() {
     wx.navigateTo({
       url: '/pages/decision/decision'
     });
-  },
-
-  // 跳转到 今天吃什么 (暂时占位)
-  goToFood() { 
-    wx.showToast({ title: '去选餐', icon: 'none' }); 
-  },
-  
-  // 跳转到 模拟器 (暂时占位)
-  goToSimulator() { 
-    wx.showToast({ title: '开发中...', icon: 'none' }); 
   }
 });

@@ -20,7 +20,7 @@
           <text class="month">{{month}}</text>
           <text class="weekday">{{weekday}}</text>
         </view>
-        
+
         <view class="lucky-section">
           <view class="lucky-item">
             <text class="label yi">宜</text>
@@ -33,8 +33,10 @@
         </view>
       </view>
 
-      <view class="right-section" bindtap="goToSimulator">
+      <view class="right-section" bindtap="handleDevClick">
         <view class="game-console">
+          <view class="dev-badge">调试中</view>
+
           <view class="console-header">今日重开模拟器</view>
           <view class="screen">
             <view class="screen-text">综合得分</view>
@@ -51,13 +53,17 @@
   </view>
 
   <view class="section-title">✨ 开挂上分必选 ✨</view>
-  
+
   <view class="grid-nav">
-    <view class="nav-card" bindtap="goToFood">
+    <view class="nav-card dev-mode" bindtap="handleDevClick">
       <view class="nav-title">今天吃什么</view>
       <view class="nav-sub">三分天注定</view>
-      <image class="nav-icon" src="https://img.icons8.com/color/96/hot-pot.png" mode="aspectFit"></image> 
+      <image class="nav-icon" src="https://img.icons8.com/color/96/hot-pot.png" mode="aspectFit"></image>
+
+      <view class="mask-text">
+        <text>功能开发中...</text>
       </view>
+    </view>
 
     <view class="nav-card" bindtap="goToDecision">
       <view class="nav-title">Yes or No</view>
